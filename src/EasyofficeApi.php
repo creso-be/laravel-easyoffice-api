@@ -2,6 +2,6 @@
 
 namespace Creso\LaravelEasyofficeApi;
 
-class LaravelEasyofficeApi
+class EasyofficeApi
 {
 }
