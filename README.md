@@ -68,7 +68,7 @@ EasyOfficeApi::webcontentParts()->all();
 ```php
 # Dependency injection
 
-use Creso\LaravelEasyofficeApi\EasyofficeApi;<?php
+use Creso\LaravelEasyofficeApi\EasyofficeApi;
 
 class MyClass 
 {
