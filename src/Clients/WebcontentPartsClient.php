@@ -6,16 +6,19 @@ namespace Creso\LaravelEasyofficeApi\Clients;
 
 class WebcontentPartsClient extends BaseClient
 {
-    public function all(): array
+    public function all(array $filters = []): array
     {
-        // TODO filter op uuid
-        $response = $this->httpClient->get('web-content-parts');
+        $path = $this->createFilterQuery('web-content-parts', $filters);
+
+        $response = $this->httpClient->get($path);
 
         return $response->json('data');
     }
 
-    public function get()
+    public function get(string $uuid): array
     {
-        // TODO
+        $response = $this->httpClient->get("web-content-part/{$uuid}");
+
+        return $response->json('data');
     }
 }
