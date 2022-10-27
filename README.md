@@ -92,7 +92,7 @@ use Creso\LaravelEasyofficeApi\EasyofficeApi;
 app(EasyofficeApi::class)->webcontentParts()->all();
 ```
 
-### Webcontent parts
+## Webcontent parts
 
 ```php
 # Get all webcontent parts
