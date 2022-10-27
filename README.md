@@ -25,14 +25,84 @@ This is the contents of the published config file:
 
 ```php
 return [
+
+    /**
+     * The base url of the EasyOffice API.
+     */
+    'base_url' => env('EASY_OFFICE_API_BASE_URL'),
+
+    /**
+     * The API token to authenticate with the EasyOffice API.
+     */
+    'api_token' => env('EASY_OFFICE_API_TOKENS'),
+
+    /**
+     * Enable or disable api response cache. (not used yet)
+     */
+    'enable_cache' => env('EASY_OFFICE_ENABLE_CACHE'),
+    
+    /**
+     * The cache lifetime of an api response in seconds. (not used yet)
+     *
+     * This will only be used in case no specific cache lifetime is configured for the api type
+     * in the config setting below.
+     */
+    'default_cache_liftime' => 60 * 60,  // 1h
+
+    /**
+     * The cache lifetime of an api response in seconds for a given api type. (not used yet)
+     */
+    'cache_lifetime' => [
+        'webcontentParts' => 60 * 60 * 24, // 24h
+    ],
 ];
 ```
 
 ## Usage
 
+## Facade vs Dependency injection vs app helper
+
 ```php
-$laravelEasyofficeApi = new Creso\LaravelEasyofficeApi();
-echo $laravelEasyofficeApi->echoPhrase('Hello, Creso!');
+# Using the facade
+EasyOfficeApi::webcontentParts()->all();
+```
+
+```php
+# Dependency injection
+
+use Creso\LaravelEasyofficeApi\EasyofficeApi;<?php
+
+class MyClass 
+{
+    public function __construct(private EasyofficeApi $easyofficeApi)
+    {
+    }
+    
+    public function __invoke()
+    {
+        $this->easyofficeApi->webcontentParts()->all();    
+    }    
+}
+```
+
+```php
+# Using the Laravel app helper
+use Creso\LaravelEasyofficeApi\EasyofficeApi;
+
+app(EasyofficeApi::class)->webcontentParts()->all();
+```
+
+### Webcontent parts
+
+```php
+# Get all webcontent parts
+EasyOfficeApi::webcontentParts()->all();
+
+# Get all webcontents parts, but filterd by uuid
+EasyOfficeApi::webcontentParts()->all(['uuid' => 'a-full-or-partial-uuid-to-filter-on']);
+
+# A specific webcontent part by uuid
+EasyOfficeApi::webcontentParts()->get('729bc31d-ab1b-4cfb-9dab-b5419bdc92ca');
 ```
 
 ## Testing
