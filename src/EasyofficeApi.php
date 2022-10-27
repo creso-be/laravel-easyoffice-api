@@ -5,7 +5,7 @@ namespace Creso\LaravelEasyofficeApi;
 use Creso\LaravelEasyofficeApi\Clients\WebcontentPartsClient;
 use Illuminate\Http\Client\PendingRequest;
 
-class EasyofficeApi
+class EasyOfficeApi
 {
     public function __construct(private PendingRequest $httpClient)
     {

@@ -20,15 +20,15 @@ class LaravelEasyofficeApiServiceProvider extends PackageServiceProvider
 
     public function packageRegistered()
     {
-        $this->app->singleton(EasyofficeApi::class, function ($app) {
+        $this->app->singleton(EasyOfficeApi::class, function ($app) {
             $httpClient = Http::withToken(config('easyoffice-api.api_token'))
                 ->baseUrl(config('easyoffice-api.base_url'))
                 ->acceptJson()
                 ->throw();
 
-            return new EasyofficeApi($httpClient);
+            return new EasyOfficeApi($httpClient);
         });
 
-        $this->app->bind(\Creso\LaravelEasyofficeApi\EasyOfficeApi::class, EasyofficeApi::class);
+        $this->app->bind(\Creso\LaravelEasyofficeApi\Facades\EasyOfficeApi::class, EasyOfficeApi::class);
     }
 }
