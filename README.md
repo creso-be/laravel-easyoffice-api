@@ -1,8 +1,6 @@
 # Laravel EasyOffice API wrapper
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/creso/laravel-easyoffice-api.svg?style=flat-square)](https://packagist.org/packages/creso/laravel-easyoffice-api)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/creso/laravel-easyoffice-api/run-tests?label=tests)](https://github.com/creso/laravel-easyoffice-api/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/creso/laravel-easyoffice-api/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/creso/laravel-easyoffice-api/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/creso/laravel-easyoffice-api.svg?style=flat-square)](https://packagist.org/packages/creso/laravel-easyoffice-api)
 
 Laravel wrapper around the EasyOffice API.
