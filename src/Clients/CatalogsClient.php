@@ -13,9 +13,9 @@ class CatalogsClient extends BaseClient
         return $response->json('data');
     }
 
-    public function get(string $uuid): array
+    public function get(string $uuid, int $page = 1): array
     {
-        $response = $this->httpClient->get("catalog/{$uuid}");
+        $response = $this->httpClient->get("catalog/{$uuid}?page={$page}");
 
         return $response->json();
     }
