@@ -123,7 +123,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Tim Van Dyck](https://github.com/creso-be)
+- [Tim Van Dyck](https://github.com/vandycktim)
 - [All Contributors](../../contributors)
 
 ## License
