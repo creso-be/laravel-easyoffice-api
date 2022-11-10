@@ -30,5 +30,9 @@ return [
      */
     'cache_lifetime' => [
         'webcontentParts' => 60 * 60 * 24, // 24h
+
+        'catalogs' => 60 * 60 * 24, // 24h
+
+        'products' => 60 * 60 * 24, // 24h
     ],
 ];
