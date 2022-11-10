@@ -22,7 +22,7 @@ class LaravelEasyofficeApiServiceProvider extends PackageServiceProvider
     {
         $this->app->singleton(EasyOfficeApi::class, function ($app) {
             $httpClient = Http::withToken(config('easyoffice-api.api_token'))
-                ->baseUrl(config('easyoffice-api.base_url'))
+                ->baseUrl(rtrim(config('easyoffice-api.base_url'), '/'))
                 ->acceptJson()
                 ->throw();
 

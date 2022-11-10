@@ -3,6 +3,8 @@
 namespace Creso\LaravelEasyofficeApi;
 
 use Creso\LaravelEasyofficeApi\Clients\CatalogsClient;
+use Creso\LaravelEasyofficeApi\Clients\ContactFormClient;
+use Creso\LaravelEasyofficeApi\Clients\ProductsClient;
 use Creso\LaravelEasyofficeApi\Clients\WebcontentPartsClient;
 use Illuminate\Http\Client\PendingRequest;
 
@@ -20,5 +22,10 @@ class EasyOfficeApi
     public function catalogs(): CatalogsClient
     {
         return new CatalogsClient($this->httpClient);
+    }
+
+    public function products(): ProductsClient
+    {
+        return new ProductsClient($this->httpClient);
     }
 }
